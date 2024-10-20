@@ -74,6 +74,12 @@ void gettour()
 	}
 	fin.close();
 }
+void displayMap() {
+    const char* mapImagePath = "delhi-metro-rail-map-2.jpg"; // Change this to your actual image file name
+
+    // Use system call to open the image
+    system(("start " + string(mapImagePath)).c_str());
+}
 //Given below code will print the path
 void disp(ll src,ll dest,ll par[])
 {
@@ -260,6 +266,7 @@ int main()
 		cout<<"1.To Route between two stations\n";
 		cout<<"2.To check nearest metro station to a tourist place\n";
 		cout<<"3.To Recharge your Smart Card\n";
+		cout << "4. To See the Metro Map\n";
 		cin>>dec;
 		switch(dec)
 		{
@@ -312,6 +319,10 @@ int main()
 						cin>>ch;
 					}while(ch=='Y'||ch=='y');
 					break;
+			
+			case 4:  // New case to display the map
+                displayMap();
+                break;
 		}
 		cout<<"Do you wish to go back to main menu\n";
 		cin>>ch;
